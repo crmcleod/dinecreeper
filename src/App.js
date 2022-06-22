@@ -3,6 +3,7 @@ import './App.css';
 
 import { useState, useEffect } from 'react'
 import Grid from './Grid';
+import { Helmet } from 'react-helmet';
 
 function App() {
 
@@ -98,6 +99,11 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>Dine Creeper</title>
+        <meta name='description' content='Minesweeper reimagined, unimaginatively!' />
+        <meta property="og:image" content="https://media.istockphoto.com/photos/american-diner-picture-id91630376?k=20&m=91630376&s=612x612&w=0&h=NSqTUG3eQdHwyH3RyzgmuYcNCpxrvPeJLHPm53DT6w8="></meta>
+      </Helmet>
       <h1>Dine Creeper</h1>
       <h2 id='sub-head'>Avoid the grumpy diners!</h2>
       {/* <h2>{minesFlagged}</h2> */}
