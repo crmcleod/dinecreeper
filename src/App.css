@@ -1,7 +1,28 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Bahiana';
+  background-color: #9c95ae5c;
 }
-
+@import url(https://fonts.googleapis.com/css?family=Bahiana:regular);
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One:regular);
+h1 {
+  width: auto;
+  margin: 0.2rem auto;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 5rem;
+}
+h2 {
+  width: auto;
+  margin: 0.1rem auto 2rem auto;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2rem;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +56,148 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#game-wrapper {
+  margin:auto;
+  border: inset 0.3rem rgba(44, 34, 34, 0.582);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(224, 224, 224);
+  box-shadow: inset 0rem 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.348), 0rem 0rem 0.8rem 0.4rem rgba(0, 0, 0, 0.303);
+}
+.tile:hover {
+  transition: all 0.2s ease;
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+.tile {
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.148), inset 0 0 5px 1px rgba(87, 87, 87, 0.173);
+  user-select: none;
+}
+input[type="range"] {
+  background-color: transparent;
+  -webkit-appearance: none;
+  width: 5rem;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 50%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 50px;
+  border-radius: 1rem;
+  background: #ffffff;
+  cursor: pointer;
+  transform: translateY(-14%);
+  font-size: 24px;
+  /* color: black; */
+  /* margin-top: -14px; You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  transition: 0.2s ease all;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 50%;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #6746b5;
+  border-radius: 1rem;
+  border: 0.2px solid #010101;
+  padding: 0.3rem 0.1rem;
+  /* transform: translateY(-50%); */
+}
+#grid-main {
+  display: flex;
+  flex-direction: column;
+}
+#buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+.no-margin {
+  margin: 0;
+}
+#buttons p {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+}
+#buttons button {
+  cursor: pointer;
+  height: 30px;
+  color: white;
+  background-color: #6746b5;
+  padding: 0.2rem 2.4rem;
+  border-radius: 1rem;
+  border: inset 1px rgb(73, 73, 73);
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  font-family: 'Bahiana';
+  margin: auto;
+}
+#buttons button:active {
+  transform: scale(0.97);
+  box-shadow: 1px 1px 1px #000000, 0px 0px 3px #0d0d0d;
+}
+
+#modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: #61dafb24;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#winner {
+  height: 30vw;
+  width: 60vw;
+  border-radius: 3rem;
+  border: 0.2rem inset rgb(67, 48, 48);
+  margin: auto;
+  background-color: rgb(249, 238, 226);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 0 3rem 1rem black;
+}
+#winner button {
+  background-color: white;
+  padding: 0.8rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#winner button:hover {
+  background-color: rgb(51, 33, 110);
+  color:white;
 }
