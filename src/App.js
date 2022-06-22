@@ -7,7 +7,7 @@ import Grid from './Grid';
 function App() {
 
   const [rerender, setRerender] = useState(false)
-  const [count] = useState(5)
+  const [count] = useState(50)
   const [gridSize] = useState(15)
 
   let grid = [...Array(gridSize)].map(_ => [...Array(gridSize)].map(_ => { return { mine: false, flagged: false, exposed: false, value: 0, whitespace: false } }));
